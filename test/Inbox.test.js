@@ -20,7 +20,24 @@ let inbox;
 });
 
 describe('Inbox', () => {
+
+    // Checks if the Contract is deployed
+    // If the address exist in options then the contract is deployed
+    //assert.ok() checkes if it exist 
     it('deploys a contract', () => {
-        console.log(inbox);
-    })
+        assert.ok(inbox.options.address);
+    });
+
+    // Cheking the initial message of the contract that we pass during deployment
+    it('has a default message',async () => {
+        const message = await inbox.methods.message().call();
+        assert.equal(message,"Hi there!")
+    });
+
+    //Checking if we can change the message
+    it('can change the message',async () => {
+        await inbox.methods.setMessage('bye').send({ from: accounts[0] })
+        const message = await inbox.methods.message().call();
+        assert.equal(message,"bye")
+    });
 })
