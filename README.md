@@ -5,7 +5,7 @@ This is used as a reference for web 3 course
 In this repository I learned about custom node solidity project 
 
 # Technologies used
-1.Solidity
+1.Solidity <br/>
 2.Ganache - Local testing blockchain
 3.Solc - A compiler to compile solidity
 4.Mocha - For Testing Purpose
