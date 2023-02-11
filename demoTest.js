@@ -1,3 +1,12 @@
+class Car {
+    park(){
+        return 'stopped';
+    }
+    drive() {
+        return 'Vroom'
+    }
+}
+
 let car;
 
 beforeEach(() => {
